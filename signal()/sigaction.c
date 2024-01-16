@@ -16,7 +16,7 @@ void handler_sigcont(int sig) {                        // On crée une fonction 
 int main(int argc, char *argv) {
 
     struct sigaction sa;                        // On crée une structure sigaction
-    sa.sa_handler = &handler_sigcont;                    // On lui attribue la fonction handler
+    sa.sa_handler = &handler_sigcont;           // On lui attribue la fonction handler
     sa.sa_flags = SA_RESTART;                   // On lui attribue le flag SA_RESTART
     sigaction(SIGCONT, &sa, NULL);              // On lui attribue le signal SIGCONT 
 
