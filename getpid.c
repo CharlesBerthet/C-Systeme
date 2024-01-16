@@ -19,5 +19,6 @@ int main (int argc, char *argv) {
         printf("Plus d'enfant à attendre\n");       // Le parent affiche un message si l'enfant est terminé
     }
 
+    exit(EXIT_SUCCESS);                 // Kill tout les processus
     return 0;
 }

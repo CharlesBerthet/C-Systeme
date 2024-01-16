@@ -26,6 +26,6 @@ int main (int argc, char *argv[]) {
         fflush(stdout);                 // On vide le buffer pour afficher les nombres un par un
     }
 
+    exit(EXIT_SUCCESS);                 // Kill tout les processus
     return 0;
-
 }

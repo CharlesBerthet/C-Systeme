@@ -10,10 +10,12 @@ int main (int argc, char *argv[]) {
     int id = fork();                    // On crée le fork du main et on stocke les id
     printf("Hello from %d\n", id);      // On affiche un message avec les id 
 
-    if (id == 0) {                      // un processus fils créé par un fork a obligatoirement 0 comme id
+    if (id == 0) {                      // Un processus fils créé par un fork a obligatoirement 0 comme id
         printf("Hello from child\n");
     } else {
         printf("Hello from parent\n");
     }
+
+    exit(EXIT_SUCCESS);                 // Kill tout les processus
     return 0;
 }
