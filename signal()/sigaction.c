@@ -13,12 +13,23 @@ void handler_sigcont(int sig) {                        // On crée une fonction 
     fflush(stdout);
 }
 
+// On peut empêcher le processus de s'arrêter avec CTRL + C
+void handler_sigtstp(int sig) {                        // On crée une fonction handler qui prend en paramètre un signal
+    printf("Non autorisé");              // On affiche un message
+}
+
 int main(int argc, char *argv) {
 
     struct sigaction sa;                        // On crée une structure sigaction
     sa.sa_handler = &handler_sigcont;           // On lui attribue la fonction handler
     sa.sa_flags = SA_RESTART;                   // On lui attribue le flag SA_RESTART
     sigaction(SIGCONT, &sa, NULL);              // On lui attribue le signal SIGCONT 
+    
+    // struct sigaction sa;
+    //sa.sa_handler = &handler_sigtstp;
+    //sa.sa_flags = SA_RESTART;
+    // sigaction(SIGTSTP, &sa, NULL);             
+
 
     int x;
     printf("Inscrire nombre : ");
